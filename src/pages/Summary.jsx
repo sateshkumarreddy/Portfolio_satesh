@@ -1,59 +1,85 @@
-import React from 'react';
-import './Summary.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { profile } from "../data/profile";
+import { projects } from "../data/projects";
+import "./Summary.css";
 
 function Summary() {
   return (
-    <div className="summary page-container">
-      <h2>Summary</h2>
-      <p>
-        I am <strong>Sateesh Kumar</strong>, a passionate and dedicated learner in the field of full-stack development. With a background in Electronics and Communication Engineering, I have transitioned into web development, focusing on building projects using React and SQL.
-      </p>
-      <p>I’m an enthusiastic and self-driven developer with a background in Electronics and Communication Engineering. I have experience working with classic ASP and Windows Forms, and I’m currently expanding my skills in ASP.NET MVC and modern frontend development with React JS.
+    <div className="summary-page">
+      <header className="summary-hero">
+        <p className="summary-kicker">Profile</p>
+        <h2>{profile.name}</h2>
+        <p className="summary-role">{profile.role}</p>
+        <p className="summary-focus">{profile.focus}</p>
+      </header>
 
-I also have a good understanding of MySQL, including database design, writing complex queries, and integrating databases with web applications. I enjoy optimizing queries for performance and ensuring data consistency across applications. I'm continuing to improve my backend and database handling skills to support full-stack development.
+      <section className="summary-card summary-about">
+        <h3>About</h3>
+        {profile.about.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </section>
 
-My goal is to become a full-stack developer capable of building scalable and user-friendly web applications. I enjoy learning new technologies, solving real-world problems, and turning ideas into interactive digital experiences.
+      <section className="summary-strengths" aria-label="Core strengths">
+        {profile.strengths.map((item) => (
+          <article key={item.title} className="strength-card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </section>
 
-I'm currently focused on mastering React JS and integrating it with backend technologies to create dynamic web apps. I'm open to opportunities, collaborations, and learning from professionals in the tech industry.
+      <section className="summary-card">
+        <h3>Technical skills</h3>
+        <div className="skill-groups">
+          {profile.skillGroups.map((group) => (
+            <div key={group.title} className="skill-group">
+              <h4>{group.title}</h4>
+              <ul>
+                {group.items.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
-Let’s connect and grow together!</p>
+      <section className="summary-split">
+        <article className="summary-card">
+          <h3>Education</h3>
+          <p className="education-degree">{profile.education.degree}</p>
+          <p className="education-years">{profile.education.years}</p>
+        </article>
+        <article className="summary-card">
+          <h3>Focus</h3>
+          <p>{profile.goal}</p>
+        </article>
+      </section>
 
-      <h3>Education</h3>
-      <ul>
-        <li><strong>B.Tech in ECE</strong> – 2019 - 2023</li>
-      </ul>
-
-      <h3>Current Focus</h3>
-      <p>
-        I am currently learning <strong>React JS</strong>, "Actively building full-stack applications using React for the frontend, Node.js for server-side logic, and SQL Server for backend data storage."
-      </p>
-
-      <h3>Technical Skills</h3>
-      <ul>
-        <li>React JS</li>
-        <li>JavaScript</li>
-        <li>SQL Server</li>
-        <li>ASP.NET </li>
-        <li>MVC.NET </li>
-        <li>Entity frameworks of .net </li>
-        <li>C#,java</li>
-        <li>HTML, CSS</li>
-      </ul>
-
-      <div className="summary">
-      <h2>Technical Focus</h2>
-      <p>
-        Strong interest and growing expertise in the complete <strong>.NET ecosystem</strong>,
-        particularly in building scalable applications using <strong>C#</strong>, <strong>ASP.NET MVC</strong>, 
-        and <strong>Entity Framework</strong>. Passionate about backend development and eager to 
-        work extensively with <strong>Microsoft technologies</strong>.
-      </p>
-    </div>
-
-      <h3>Career Goal</h3>
-      <p>
-        To secure a position as a software/web developer where I can apply my technical skills and continuously grow in the IT industry.
-      </p>
+      <section className="summary-card summary-work">
+        <div className="summary-work-header">
+          <h3>Selected work</h3>
+          <Link className="summary-link" to="/projects">
+            View all projects
+          </Link>
+        </div>
+        <ul className="work-list">
+          {projects.map((project) => (
+            <li key={project.id}>
+              <span className="work-number">{project.number}</span>
+              <div>
+                <p className="work-title">
+                  {project.title}
+                  <span>{project.category}</span>
+                </p>
+                <p className="work-tagline">{project.tagline}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

@@ -15,7 +15,7 @@ import './App.css'; // Optional CSS file for your styling
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Navbar />
 

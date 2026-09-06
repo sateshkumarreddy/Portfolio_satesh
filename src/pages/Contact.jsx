@@ -10,7 +10,7 @@ function Contacts() {
           📞 <strong>Phone:</strong> <a href="tel:+919390217816">+91 93902 17816</a>
         </li>
          <li>
-         📧 <strong>Gmail:</strong> <a href="mailto:sateshkumar2708@gmail.com">sateshkumar2708@gmail.com</a>
+         📧 <strong>Gmail:</strong> <a href="mailto:sateshkumar1814@gmail.com">sateshkumar1814@gmail.com</a>
         </li>
         <li>
           🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/satesh2023" target="_blank" rel="noopener noreferrer">
