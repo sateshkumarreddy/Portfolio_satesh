@@ -7,7 +7,7 @@ function Footer() {
       <p>&copy; 2025 Sateesh Kumar. All rights reserved.</p>
       <div className="footer-links">
         <a href="https://github.com/sateshkumarreddy" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/satesh-kumar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/satesh2023" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:sateshkumar1814@gmail.com">Gmail</a>
       </div>
     </footer>
